@@ -1,0 +1,41 @@
+// Colors
+$blue-white: #f9fcfc;
+$lightest-blue: #e4f1f4;
+$light-blue: #c0dee6;
+$med-blue: #44a3ce;
+$dark-blue: #1e5a83;
+$grey: #72787a;
+$white: #fff;
+$transparent-white: rgba(255, 255, 255, 0.5);
+//CHANGE COLORS TO EXACT ONES FROM DESIGN!!!!!!!!!!!!!!!!!
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+h1 {
+  color: $dark-blue;
+  font-weight: 400;
+}
+
+// General styles
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: $light-blue;
+  background-image: url('../img/background.svg');
+  background-repeat: no-repeat;
+  background-position: 180% bottom;
+  background-size: 85%;
+  min-height: 100vh;
+  color: $grey;
+}
+
+a {
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+
+@import 'login';
