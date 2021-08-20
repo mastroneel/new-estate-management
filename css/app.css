@@ -64,7 +64,11 @@ a {
         color: #000;
         font-weight: 600;
         font-size: 12px; }
-    .box form input[type="password"], .box form input[type="text"] {
+    .box form input[type="password"],
+    .box form #password-field-1,
+    .box form #password-field-2,
+    .box form #password-field-3,
+    .box form #password-field-4 {
       margin-top: 34px; }
     .box form .fa, .box form .fa-eye, .box form .fa-eye-slash {
       float: right;

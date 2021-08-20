@@ -54,7 +54,11 @@
         font-size: 12px;
       }
     }
-    input[type="password"], input[type="text"]  {
+    input[type="password"],
+    #password-field-1,
+    #password-field-2,
+    #password-field-3,
+    #password-field-4  {
       margin-top: 34px;
     }
     .fa, .fa-eye, .fa-eye-slash {
