@@ -1,0 +1,243 @@
+.box {
+  background-color: $transparent-white;
+  padding: 40px 90px;
+  float: right;
+  margin-top: 50px;
+  width: 60%;
+  min-width: 300px;
+  border-radius: 10px;
+  p {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  img {
+    width: 18px;
+    margin-bottom: -2px;
+  }
+  .divider-row {
+    margin-top: 20px;
+    margin-bottom: -10px;
+    .col-xs-5:nth-child(1) {
+      padding-left: 10px;
+    }
+    .col-xs-2, .col-xs-5 {
+      padding: 0;
+    }
+    .divider {
+      width: 100%;
+      border-bottom: 1px solid #aab0b2;
+    }
+    p {
+      margin-top: -8px;
+    }
+  }
+  form {
+    margin-top: 50px;
+    input[type="email"], input[type="password"], input[type="text"] {
+      border: 1px solid $med-blue;
+      border-radius: 8px;
+      width: 96%;
+      padding-left: 4%;
+      height: 50px;
+      color: #000;
+      font-weight: 600;
+      font-size: 12px;
+      background-color: #f9fcfc;
+      position: relative;
+      z-index: 1;
+      &::placeholder {
+        color: #000;
+        font-weight: 600;
+
+        font-size: 12px;
+      }
+    }
+    input[type="password"], input[type="text"]  {
+      margin-top: 34px;
+    }
+    .fa, .fa-eye, .fa-eye-slash {
+      float: right;
+      color: $dark-blue;
+      font-size: 18px;
+      margin-top: -36px;
+      margin-right: 8px;
+      position: relative;
+      z-index: 1000;
+    }
+    .row {
+      margin-top: 16px;
+      font-size: 11px;
+      a {
+        float: right;
+        font-style: italic;
+        color: #75c9e1;
+      }
+    }
+    button {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      margin-top: 24px;
+      width: 102%;
+      height: 50px;
+      text-transform: uppercase;
+      color: $white;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 6px;
+      border-color: transparent;
+      border: none;
+      background-image: linear-gradient(to right, $dark-blue 0%, $med-blue 100%);
+    }
+  }
+  .center {
+    p, a {
+      font-size: 12px;
+    }
+    a {
+      font-style: italic;
+      color: $dark-blue;
+      margin-left: 12px;
+      font-weight: 600;
+    }
+  }
+}
+
+
+// Checkbox styles
+/* Customize the label (the container) */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  //margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 11px;
+  width: 11px;
+  background-color: transparent;
+  border: 1.5px solid $dark-blue;
+  border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  //background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  //background-color: $med-blue;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 4px;
+  top: -1px;
+  width: 3px;
+  height: 7px;
+  border: solid $dark-blue;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.register-box {
+  form {
+    input[type="email"] {
+      margin-top: 34px;
+    }
+    button {
+      margin-top: 34px;
+    }
+  }
+}
+
+.forgot-password {
+  p {
+    width: 80%;
+    min-width: 290px;
+    margin: 0 auto -20px auto;
+  }
+  form {
+    button {
+      margin-top: 34px;
+    }
+  }
+}
+
+.reset-password {
+  form {
+    margin-top: 0px;
+    button {
+      margin-top: 34px;
+    }
+  }
+}
+
+.signup-successful, .signup-unsuccessful {
+  h3 {
+    font-size: 14px;
+    color: $dark-blue;
+    line-height: 1.8;
+    a {
+      color: #44a3ce;
+    }
+  }
+}
+
+.signup-successful {
+  h3 {
+    margin-top: 56px;
+  }
+  img {
+    width: 30%;
+    min-width: 100px;
+    margin-top: 40px;
+  }
+}
+
+.signup-unsuccessful {
+  h3 {
+    margin-top: 50px;
+  }
+  img {
+    width: 30%;
+    min-width: 100px;
+    margin-top: 18px;
+  }
+}

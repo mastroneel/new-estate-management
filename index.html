@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" integrity="sha512-YHuwZabI2zi0k7c9vtg8dK/63QB0hLvD4thw44dFo/TfBFVVQOqEG9WpviaEpbyvgOIYLXF1n7xDUfU3GDs0sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/3d9e1fcdd2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/app.css">
     <title>New Estate Management</title>
   </head>
@@ -35,7 +36,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-6">
           <!-- login box -->
-          <div class="login-box">
+          <div class=" box login-box">
             <h1 class="center">
               Customer Portal
             </h1>
@@ -44,12 +45,14 @@
               <div class="field-container">
                 <input type="email" placeholder="Email" name="email" required>
                 <br>
-                <input type="password" placeholder="Password" name="password" required>
+                <input id="password-field-1" type="password" placeholder="Password" name="password" required>
+                <span toggle="#password-field-1" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 
                 <div class="row">
                   <div class="col-xs-6">
-                    <label>
+                    <label class="checkbox-container">
                       <input type="checkbox" checked="checked" name="remember"> Remember me
+                      <span class="checkmark"></span>
                     </label>
                   </div>
                   <div class="col-xs-6">
@@ -91,6 +94,129 @@
             </div>
           </div>
           <!-- end login box -->
+
+          <!-- register box -->
+          <div class=" box register-box">
+            <h1 class="center">
+              Create New Account
+            </h1>
+            <!-- form -->
+            <form action="" method="post">
+              <div class="field-container">
+                <input type="text" placeholder="Full Name*" required>
+                <input type="email" placeholder="Email*" name="email" required>
+                <br>
+                <input type="password" id="password-field-2" placeholder="Password*" name="password" required>
+                <span toggle="#password-field-2" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                <button type="submit">Sign Up</button>
+              </div>
+            </form>
+            <!-- end form -->
+            <div class="row divider-row center">
+              <div class="col-xs-5">
+                <div class="divider"></div>
+              </div>
+              <div class="col-xs-2">
+                <p>Or</p>
+              </div>
+              <div class="col-xs-5">
+                <div class="divider"></div>
+              </div>
+            </div>
+            <div class="center">
+              <p>
+                Sign in with-
+                <a href="#">
+                  <img src="img/twitter.png" alt="Twitter">
+                </a>
+                <a href="#">
+                  <img src="img/apple.png" alt="Apple ID">
+                </a>
+                <a href="#">
+                  <img src="img/google.png" alt="Google">
+                </a>
+                <br>
+                <br>
+                <br>
+                Have an Account?   <a href="#">Sign In</a>
+              </p>
+            </div>
+          </div>
+          <!-- end register box -->
+
+          <!-- Sign up successful box -->
+          <div class="box signup-successful center">
+            <h1>
+              Congratulations
+            </h1>
+            <!-- form -->
+            <img src="img/successful.svg" alt="Successful">
+            <h3>
+              Your account has been created. Please follow the link below to enter your Panel/Dashboard
+              <br>
+              <a href="#">Click Here</a>
+            </h3>
+            <!-- end form -->
+          </div>
+          <!-- end sign up successful box -->
+
+          <!-- Sign up unsuccessful box -->
+          <div class="box signup-unsuccessful center">
+            <h1>
+              Signing Up Unsuccessful
+            </h1>
+            <!-- form -->
+            <img src="img/unsuccessful.svg" alt="Unsuccessful">
+            <h3>
+              Your account has been created. Please follow the link below to enter your Panel/Dashboard
+              <br>
+              <a href="#">Click Here</a>
+            </h3>
+            <!-- end form -->
+          </div>
+          <!-- end sign up unsuccessful box -->
+
+          <!-- forgot password box -->
+          <div class="box forgot-password">
+            <h1 class="center">
+              Reset Password
+            </h1>
+            <p class="center">
+              Enter the registered email and then you will receive the link to reset your password.
+            </p>
+            <!-- form -->
+            <form action="" method="post">
+              <div class="field-container">
+                <input type="email" placeholder="Enter your email" name="email" required>
+
+                <button type="submit">Send</button>
+              </div>
+            </form>
+            <!-- end form -->
+          </div>
+          <!-- end forgot password box -->
+
+          <!-- reset password box -->
+          <div class="box reset-password">
+            <h1 class="center">
+              Reset Password
+            </h1>
+            <!-- form -->
+            <form action="" method="post">
+              <div class="field-container">
+                <input type="password" id="password-field-3" placeholder="New password" name="password" required>
+                <span toggle="#password-field-3" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                <input type="password" id="password-field-4" placeholder="Confirm new password" name="password" required>
+                <span toggle="#password-field-4" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+
+                <button type="submit">Reset</button>
+              </div>
+            </form>
+            <!-- end form -->
+          </div>
+          <!-- end reset password box -->
+
+
         </div>
       </div>
     </div>
@@ -101,6 +227,21 @@
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <!-- toggle view password -->
+  <script>
+    $(".toggle-password").click(function() {
+
+      $(this).toggleClass("fa-eye fa-eye-slash");
+      var input = $($(this).attr("toggle"));
+      if (input.attr("type") == "password") {
+        input.attr("type", "text");
+      } else {
+        input.attr("type", "password");
+      }
+    });
+  </script>
+
 
   </body>
 </html>
