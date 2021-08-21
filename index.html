@@ -11,7 +11,7 @@
   <body>
 
     <!-- desktop navigation -->
-    <div class="nav-desktop">
+    <!-- <div class="nav-desktop">
       <div class="row">
         <div class="col-xs-12 col-sm-4">
 
@@ -20,21 +20,22 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- end desktop navigation -->
 
     <!-- mobile navigation -->
-    <div class="nav-mobile">
+    <!-- <div class="nav-mobile">
       <div class="row">
 
       </div>
-    </div>
+    </div> -->
     <!-- end mobile navigation -->
 
     <!-- main-content -->
     <div class="main-content">
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-md-6">
+
           <!-- login box -->
           <div class=" box login-box">
             <h1 class="center">
@@ -56,10 +57,10 @@
                     </label>
                   </div>
                   <div class="col-xs-6">
-                    <a href="#">Forgot password?</a>
+                    <a id="forgot-password" href="#">Forgot password?</a>
                   </div>
                 </div>
-                <button type="submit">Log In</button>
+                <button id="show-confirm" type="submit">Log In</button>
               </div>
             </form>
             <!-- end form -->
@@ -89,11 +90,41 @@
                 <br>
                 <br>
                 <br>
-                Not a customer of New Estate Management?   <a href="#">Register</a>
+                Not a customer of New Estate Management?   <a id="register" href="#">Register</a>
               </p>
             </div>
           </div>
           <!-- end login box -->
+
+          <!-- confirm account box -->
+          <div class=" box confirm-account">
+            <h1 class="center">
+              Confirm your Account
+            </h1>
+            <p class="center">
+              Please enter the code we have sent to your email.
+            </p>
+            <!-- form -->
+            <form action="" method="post">
+              <div class="field-container">
+                <input type="number" class="number" maxlength="1">
+                <input type="number" class="number" maxlength="1">
+                <input type="number" class="number" maxlength="1">
+                <input type="number" class="number" maxlength="1">
+                <input type="number" class="number" maxlength="1">
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <p>Didn't receive the code? <a class="show-login" href="#">Send again</a></p>
+                  <p id="timer"></p>
+                </div>
+              </div>
+              <button id="show-email" type="submit">Confirm</button>
+            </form>
+            <!-- end form -->
+          </div>
+          <!-- end confirm account box -->
+
 
           <!-- register box -->
           <div class=" box register-box">
@@ -108,7 +139,7 @@
                 <br>
                 <input type="password" id="password-field-2" placeholder="Password*" name="password" required>
                 <span toggle="#password-field-2" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                <button type="submit">Sign Up</button>
+                <button id="sign-up" type="submit">Sign Up</button>
               </div>
             </form>
             <!-- end form -->
@@ -138,7 +169,7 @@
                 <br>
                 <br>
                 <br>
-                Have an Account?   <a href="#">Sign In</a>
+                Have an Account?   <a id="sign-in" href="#">Sign In</a>
               </p>
             </div>
           </div>
@@ -154,7 +185,7 @@
             <h3>
               Your account has been created. Please follow the link below to enter your Panel/Dashboard
               <br>
-              <a href="#">Click Here</a>
+              <a id="unsuccessful" href="#">Click Here</a>
             </h3>
             <!-- end form -->
           </div>
@@ -168,13 +199,27 @@
             <!-- form -->
             <img src="img/unsuccessful.svg" alt="Unsuccessful">
             <h3>
-              Your account has been created. Please follow the link below to enter your Panel/Dashboard
-              <br>
-              <a href="#">Click Here</a>
+              Sorry we cannot validate account and Team Member will review and contact within 24 hours. <a class="show-login" href="#">Display contact details.</a>
             </h3>
             <!-- end form -->
           </div>
           <!-- end sign up unsuccessful box -->
+
+          <!-- Email sent box -->
+          <div class="box email-sent center">
+            <h1>
+              Email sent
+            </h1>
+            <!-- form -->
+            <img src="img/email.svg" alt="Unsuccessful">
+            <h3>
+              We have sent an email. Please click the email to confirm.
+              <br>
+              <a class="show-login" href="#">Click here to go to email</a>
+            </h3>
+            <!-- end form -->
+          </div>
+          <!-- End email sent box -->
 
           <!-- forgot password box -->
           <div class="box forgot-password">
@@ -189,7 +234,7 @@
               <div class="field-container">
                 <input type="email" placeholder="Enter your email" name="email" required>
 
-                <button type="submit">Send</button>
+                <button id="set-password" type="submit">Send</button>
               </div>
             </form>
             <!-- end form -->
@@ -209,7 +254,7 @@
                 <input type="password" id="password-field-4" placeholder="Confirm new password" name="password" required>
                 <span toggle="#password-field-4" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 
-                <button type="submit">Reset</button>
+                <button class="show-login" type="submit">Reset</button>
               </div>
             </form>
             <!-- end form -->
@@ -241,6 +286,115 @@
       }
     });
   </script>
+  <!-- end toggle view password -->
+
+
+  <!-- show/hide divs -->
+  <script>
+
+    $("#register").click(function() {
+      $('.login-box').css('display', 'none');
+      $('.register-box').fadeIn();
+    });
+
+    $("#sign-in").click(function() {
+      $('.register-box').css('display', 'none');
+      $('.login-box').fadeIn();
+    });
+
+    $("#sign-up").click(function() {
+      $('.register-box').css('display', 'none');
+      $('.signup-successful').fadeIn();
+    });
+
+    $("#unsuccessful").click(function() {
+      $('.signup-successful').css('display', 'none');
+      $('.signup-unsuccessful').fadeIn();
+    });
+
+    $(".show-login").click(function() {
+      $('.box').css('display', 'none');
+      $('.login-box').fadeIn();
+    });
+
+    $("#forgot-password").click(function() {
+      $('.login-box').css('display', 'none');
+      $('.forgot-password').fadeIn();
+    });
+
+    $("#set-password").click(function() {
+      $('.forgot-password').css('display', 'none');
+      $('.reset-password').fadeIn();
+    });
+
+    $("#show-email").click(function(e) {
+      e.preventDefault();
+      $('.confirm-account').css('display', 'none');
+      $('.email-sent').fadeIn();
+    });
+
+    $("#show-confirm").click(function(e) {
+      e.preventDefault();
+      $('.login-box').css('display', 'none');
+      $('.confirm-account').fadeIn();
+    });
+
+
+
+
+
+
+
+
+
+  </script>
+  <!-- end show/hide divs -->
+
+  <!-- automatically move to next number in confirm account box -->
+  <script>
+  var elts = document.getElementsByClassName('number')
+    Array.from(elts).forEach(function(elt){
+    elt.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+      if (event.keyCode === 13 || elt.value.length == 1) {
+        // Focus on the next sibling
+        elt.nextElementSibling.focus()
+      }
+    });
+  })
+  </script>
+  <!-- end automatically move to next number in confirm account box -->
+
+  <!-- timer -->
+  <script>
+  document.getElementById('timer').innerHTML =
+02 + ":" + 00;
+startTimer();
+
+
+function startTimer() {
+var presentTime = document.getElementById('timer').innerHTML;
+var timeArray = presentTime.split(/[:]+/);
+var m = timeArray[0];
+var s = checkSecond((timeArray[1] - 1));
+if(s==59){m=m-1}
+if(m<0){
+  return
+}
+
+document.getElementById('timer').innerHTML =
+  m + ":" + s;
+setTimeout(startTimer, 1000);
+
+}
+
+function checkSecond(sec) {
+if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+if (sec < 0) {sec = "59"};
+return sec;
+}
+  </script>
+  <!-- end timer -->
 
 
   </body>
