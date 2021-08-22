@@ -27,6 +27,22 @@ body {
   background-size: 85%;
   min-height: 100vh;
   color: $grey;
+  overflow: auto;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }
 
 a {
@@ -36,6 +52,7 @@ a {
 .center {
   text-align: center;
 }
+
 
 
 @import 'boxes';
