@@ -30,6 +30,7 @@ a {
 
 .box {
   background-color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 40px;
   padding: 40px 90px;
   float: right;
   margin-top: 50px;
@@ -223,8 +224,6 @@ a {
     font-style: normal; }
 .confirm-account form .row #timer {
   color: #1e5a83; }
-.confirm-account form button {
-  margin-top: 0px; }
 .confirm-account form .field-container {
   display: flex;
   flex-wrap: wrap;

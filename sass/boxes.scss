@@ -10,6 +10,7 @@
 
 .box {
   background-color: $transparent-white;
+  margin-bottom: 40px;
   padding: 40px 90px;
   float: right;
   margin-top: 50px;
@@ -282,9 +283,6 @@
       #timer {
         color: $dark-blue;
       }
-    }
-    button {
-      margin-top: 0px;
     }
     .field-container {
       display: flex;
