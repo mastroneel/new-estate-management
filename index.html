@@ -31,6 +31,40 @@
     </div> -->
     <!-- end mobile navigation -->
 
+
+
+
+    <!-- nav -->
+    <div id="header">
+  <div class="logo">
+
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <a href="">About Us</a>
+      </li>
+      <li class="dropdown">
+        <a href="">Services <i class="fas fa-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Property Owners</a></li>
+            <li><a href="#">Developers</a></li>
+            <li><a href="#">Freeholders</a></li>
+            <li><a href="#">Resident Management Companies</a></li>
+            <li><a href="#">Social Housing</a></li>
+          </ul>
+      </li>
+      <li>
+        <a href="">Latest News</a>
+      </li>
+      <li>
+        <a href="">Contact Us</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+    <!-- end nav -->
+
     <!-- main-content -->
     <div class="main-content">
       <div class="row">
@@ -396,6 +430,17 @@ return sec;
   </script>
   <!-- end timer -->
 
+<!-- mobile menu -->
+<script>
+$('#header').prepend('<div id="menu-icon"><span class="first"></span><span class="second"></span><span class="third"></span></div>');
+
+$("#menu-icon").on("click", function(){
+$("nav").slideToggle();
+$(this).toggleClass("active");
+});
+
+</script>
+<!-- end mobile menu -->
 
   </body>
 </html>
